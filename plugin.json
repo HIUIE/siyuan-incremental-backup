@@ -1,7 +1,7 @@
 {
   "name": "siyuan-incremental-backup",
-  "author": "Carlos Fu",
-  "url": "https://github.com/carlosfuu/siyuan-incremental-backup",
+  "author": "HIUIE",
+  "url": "https://github.com/HIUIE/siyuan-incremental-backup",
   "version": "1.1.0",
   "minAppVersion": "3.0.0",
   "backends": [
