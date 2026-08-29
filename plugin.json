@@ -1,0 +1,37 @@
+{
+  "name": "siyuan-incremental-backup",
+  "author": "Carlos Fu",
+  "url": "https://github.com/carlosfuu/siyuan-incremental-backup",
+  "version": "1.1.0",
+  "minAppVersion": "3.0.0",
+  "backends": [
+    "all"
+  ],
+  "frontends": [
+    "desktop"
+  ],
+  "displayName": {
+    "default": "Incremental Backup",
+    "zh_CN": "本地增量备份"
+  },
+  "description": {
+    "default": "Local incremental backup with hard-link snapshots. Every snapshot is a full folder tree; unchanged files are hard-linked so extra space is nearly zero.",
+    "zh_CN": "本地自动增量备份。采用硬链接快照：每份快照都是完整目录树，未变动文件硬链接共享，几乎不占额外空间，可回溯任意时间点。"
+  },
+  "readme": {
+    "default": "README.md",
+    "zh_CN": "README_zh_CN.md"
+  },
+  "keywords": [
+    "backup",
+    "incremental",
+    "备份",
+    "增量备份",
+    "snapshot",
+    "快照"
+  ],
+  "funding": {
+    "openCollective": "siyuan",
+    "github": "siyuan-note"
+  }
+}
