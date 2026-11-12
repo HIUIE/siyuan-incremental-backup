@@ -18,7 +18,7 @@ Module._load = function (request) {
     return origLoad.apply(this, arguments);
 };
 
-const pluginPath = "/Users/carlosfu/SiYuan/data/plugins/siyuan-incremental-backup/index.js";
+const pluginPath = path.join(__dirname, "index.js");
 const PluginClass = require(pluginPath);
 const I = PluginClass.__internals;
 
@@ -29,7 +29,7 @@ function check(name, cond, extra) {
 }
 
 async function main() {
-    const tmp = await fsp.mkdtemp(path.join(os.tmpdir(), "sibk-test-"));
+    const tmp = await fsp.realpath(await fsp.mkdtemp(path.join(os.tmpdir(), "sibk-test-")));
     const ws = path.join(tmp, "workspace");
     const dest = path.join(tmp, "backup");
     console.log("测试目录：" + tmp);
@@ -142,7 +142,7 @@ async function main() {
     const listedAll = await I.listSnapshots(dest, { includeIncomplete: true });
     check("includeIncomplete 可见未完成快照", listedAll.some((s) => s.path === orphan));
     const removed = await I.cleanupIncomplete(dest);
-    check("cleanupIncomplete 清理半成品", removed === 1, "删除 " + removed);
+    check("cleanupIncomplete 保留半成品供排查", removed === 0 && fs.existsSync(orphan), "删除 " + removed);
     check("完整快照未被误删", fs.existsSync(snap3));
 
     // 取消 -> 半成品即时删除

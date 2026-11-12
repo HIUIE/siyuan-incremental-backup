@@ -2,7 +2,7 @@
   "name": "siyuan-incremental-backup",
   "author": "Carlos Fu",
   "url": "https://github.com/HIUIE/siyuan-incremental-backup",
-  "version": "1.1.1",
+  "version": "1.3.2",
   "minAppVersion": "3.0.0",
   "backends": [
     "all"
@@ -15,8 +15,8 @@
     "zh_CN": "本地增量备份"
   },
   "description": {
-    "default": "Local incremental backup with hard-link snapshots. Every snapshot is a full folder tree; unchanged files are hard-linked so extra space is nearly zero.",
-    "zh_CN": "本地自动增量备份。采用硬链接快照：每份快照都是完整目录树，未变动文件硬链接共享，几乎不占额外空间，可回溯任意时间点。"
+    "default": "Local backup workbench with scheduled hard-link snapshots, SHA-256 verification, and safe recovery exports.",
+    "zh_CN": "本地自动备份与快照校验。独立备份工作台，支持定时增量、SHA-256 内容校验和安全导出恢复。"
   },
   "readme": {
     "default": "README.md",

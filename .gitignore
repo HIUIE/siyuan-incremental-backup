@@ -6,3 +6,11 @@
 
 # 日志
 *.log
+
+# 本机预览、测试结果、安装记录、设置副本与回退目录
+/artifacts/
+
+# 开发环境缓存
+__pycache__/
+*.pyc
+node_modules/
